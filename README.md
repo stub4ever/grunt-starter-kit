@@ -6,7 +6,7 @@ Starter kit - Sass + Bourbon library
 - Task Uncss doesnt work yet
 - Add jshint + stylehint task
 - Sprite task
-- task handlebars or mustasche 
+- template task (handlebars or mustache)
 - Setup Css achitecture
 - Html boilerplate
 
