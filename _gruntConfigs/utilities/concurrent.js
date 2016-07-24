@@ -1,5 +1,5 @@
 
-/*----------------------------------( concurrent )----------------------------------*/
+/*----------------------------------( CONCURRENT )----------------------------------*/
 
 /**
 * Run some tasks in parallel to speed up build process
@@ -14,13 +14,15 @@ module.exports.tasks = {
     concurrent: {
       server: [
         'sass',
-        'babel:dist'
+        'babel:dist',
+        'concat',
+        'modernizr',
       ],
       dist: [
         'babel',
         'sass',
         'imagemin',
-        'svgmin'
+        'svgmin',
       ]
     },
 

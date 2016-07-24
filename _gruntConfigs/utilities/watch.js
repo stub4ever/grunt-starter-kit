@@ -15,24 +15,24 @@ module.exports.tasks = {
             // terminate current process and spawn a new one upon later changes
             interrupt: true,
         },
-        bower: {
-            files: ['bower.json'],
-            tasks: ['wiredep']
+        html: {
+            files: ['<%=config.srcDir%>/{,*/}*.html'],
         },
         gruntfile: {
-            files: ['Gruntfile.js', '_gruntConfigs/{,*/}*.js']
+            files: ['_gruntConfigs/{,*/}*.js'],
+            tasks: ['concat', 'notify:config'],
         },
         sass: {
             files: ['<%=config.css.scssDir%>/{,*/}*.{scss,sass}'],
-            tasks: ['sass']
+            tasks: ['sass', 'notify:styles']
         },
         babel: {
-            files: ['<%=config.js.srcDir%>/{,*/}*.js'],
-            tasks: ['babel:dist']
+            files: ['<%=config.js.srcDir%>/**/**/**/*.js'],
+            tasks: ['babel:dist', 'notify:scripts']
         },
         styles: {
             files: ['<%=config.css.scssDir%>/{,*/}*.css'],
-            tasks: ['newer:copy:styles', 'sass']
+            tasks: ['newer:copy:styles', 'sass', 'notify:styles']
         }
     },
 };

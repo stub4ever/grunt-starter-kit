@@ -1,11 +1,20 @@
+/*----------------------------------( SASS )----------------------------------*/
+
+/**
+* Compiles Sass to CSS and generates necessary files if requested
+*
+* @see https://github.com/gruntjs/grunt-contrib-sass
+* @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#output_style
+*/
+
+
 module.exports.tasks = {
 
 
-    // Compiles Sass to CSS and generates necessary files if requested
     sass: {
         options: {
             expand: true,
-            outputStyle: 'expanded',
+            style: 'expanded', // Output style. Can be nested, compact, compressed, expanded.
             sourceMap: true,
             sourceMapEmbed: true,
             sourceMapContents: true,

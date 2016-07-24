@@ -9,9 +9,23 @@ module.exports = {
     //PROJECT settings
     src : "./_gruntConfigs/**/*.js",
 
+
+    /*----------------------------------( port vars )----------------------------------*/
+
+    port : {
+        host: 'localhost',
+        dev: 8000,
+        dist: 9000,
+    },
+
+    /*----------------------------------( Dir vars )----------------------------------*/
+
     srcDir  : 'app',    // <%=config.srcDir%>
     distDir : 'dist',   // <%=config.distDir%>
     tempDir : '.tmp',   // <%=config.tempDir%>
+
+
+    /*----------------------------------( bower var )----------------------------------*/
 
     bower : {
         srcDir : 'bower_components'     // <%=config.bower.srcDir%>
@@ -22,32 +36,78 @@ module.exports = {
 
     css : {
         /*-- SOURCES FOLDERS ---------------------------------------------*/
-        scssDir  : '<%=config.srcDir%>/styles',              // <%=config.css.scssDir%>
+        scssDir  : '<%=config.srcDir%>/styles',     // <%=config.css.scssDir%>
+
+        srcDevList : [                                      // <%=config.css.srcDevList%>
+            '<%=config.css.tempDir%>/{,*/}*.css',
+            '<%=config.css.scssDir%>/{,*/}*.css',
+        ],
+        srcVendorList : [                                  // <%=config.css.srcVendorList%>
+            './bower_components/normalize-css/normalize.css',
+        ],
+
+        srcDirFonts  : 'styles/fonts',     // <%=config.css.srcDirFonts%>
 
         /*-- DIST FOLDERS ---------------------------------------------*/
-        distDir  : '<%=config.distDir%>/styles',             // <%=config.css.distDir%>
+        distDir  : '<%=config.distDir%>/styles',    // <%=config.css.distDir%>
 
-        distDirFonts  : '<%=config.css.distDir%>/fonts',    // <%=config.css.distDirFonts%>
+        distDevFile : '<%=config.css.distDir%>/main.min.css',    // <%=config.css.distDevFile%>
+        distVendorFile : '<%=config.css.distDir%>/vendor.min.css',    // <%=config.css.distVendorFile%>
+
+        distDirFonts  : 'styles/fonts',    // <%=config.css.distDirFonts%>
 
         /*-- TEMP FOLDERS ---------------------------------------------*/
-        tempDir  : '<%=config.tempDir%>/styles',           // <%=config.css.tempDir%>
+        tempDir  : '<%=config.tempDir%>/styles',          // <%=config.css.tempDir%>
+        tempDirConcat : '<%=config.css.tempDir%>/concat/', // <%=config.css.tempDirConcat%>
 
-
-        // We are supporting the last 2 browsers, any browsers with >5% market share,
-        // and ensuring we support IE8+ with prefixes
-        autoprefixer : ['> 5%', 'last 2 versions', 'ie > 7'] // <%=config.css.autoprefixer%>
+        tempDevConcatFile : '<%=config.css.tempDirConcat%>/main.css',         // <%=config.css.tempDevConcatFile%>
+        tempVendorConcatFile : '<%=config.css.tempDirConcat%>/vendor.css',    // <%=config.css.tempVendorConcatFile%>
     },
 
 
     /*----------------------------------( js vars )----------------------------------*/
 
     js : {
+        /*-- SOURCES FOLDERS ---------------------------------------------*/
         srcDir : '<%=config.srcDir%>/scripts',       // <%=config.js.srcDir%>
         srcFile : 'main.js',                         // <%=config.js.srcFile%>
-        distDir : '<%=config.distDir%>/scripts',     // <%=config.js.distDir%>
-        distFile : '<%=config.js.distDir%>/main.js', // <%=config.js.distFile%>
 
+        srcDevList : [                                     // <%=config.js.srcDevList%>
+            '<%=config.js.tempDir%>/*.js',
+            '<%=config.js.tempDir%>/app/*.js'
+        ],
+        srcVendorList : [                                  // <%=config.js.srcVendorList%>
+            './bower_components/jquery/dist/jquery.js',
+        ],
+        srcPluginsList : [                                 // <%=config.js.srcPluginsList%>
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+        ],
+
+        /*-- DIST FOLDERS ---------------------------------------------*/
+        distDir : '<%=config.distDir%>/scripts',            // <%=config.js.distDir%>
+
+        distDevFile : '<%=config.js.distDir%>/main.min.js',    // <%=config.js.distDevFile%>
+        distVendorFile : '<%=config.js.distDir%>/vendor.min.js',    // <%=config.js.distVendorFile%>
+        distPluginsFile : '<%=config.js.distDir%>/plugins.min.js',    // <%=config.js.distPluginsFile%>
+
+        /*-- TEMP FOLDERS ---------------------------------------------*/
         tempDir : '<%=config.tempDir%>/scripts',     // <%=config.js.tempDir%>
+        tempDirConcat : '<%=config.js.tempDir%>/concat/', // <%=config.js.tempDirConcat%>
+
+        tempDevConcatFile : '<%=config.js.tempDirConcat%>/main.js',         // <%=config.js.tempDevConcatFile%>
+        tempVendorConcatFile : '<%=config.js.tempDirConcat%>/vendor.js',    // <%=config.js.tempVendorConcatFile%>
+        tempPluginsConcaFile : '<%=config.js.tempDirConcat%>/plugins.js',   // <%=config.js.tempPluginsConcaFile%>
     },
 
 

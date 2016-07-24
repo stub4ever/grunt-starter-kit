@@ -3,8 +3,9 @@ module.exports.tasks = {
     htmlmin: {
         dist: {
             options: {
-                // collapseBooleanAttributes: true,
                 // collapseWhitespace: true,
+                removeComments: true,
+                // collapseBooleanAttributes: true,
                 // conservativeCollapse: true,
                 // removeAttributeQuotes: true,
                 // removeCommentsFromCDATA: true,

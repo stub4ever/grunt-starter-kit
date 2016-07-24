@@ -3,6 +3,7 @@
  * - grunt                   : The default task. Alias for `grunt serve` task below
  * - grunt serve             : watch files and run a static server
  * - grunt build             : Concat & optimized css, js, svg, images files for production
+ * - grunt dist              : Run a optimized static production server
  */
 
 module.exports = function (grunt) {
@@ -15,11 +16,14 @@ module.exports = function (grunt) {
         config : require('./_gruntConfigs/config.js')
     };
 
-    // Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt, {pattern: ["grunt-*"]});
 
     // Load grunt configurations automatically
     var configs = require('load-grunt-configs')(grunt, options);
+
+     // Automatically load required grunt tasks
+    require('jit-grunt')(grunt, {
+        useminPrepare: 'grunt-usemin'
+    });
 
     // Define the configuration for all the tasks
     grunt.initConfig(configs);
@@ -30,35 +34,33 @@ module.exports = function (grunt) {
 
     /*=====================================( TASKS )=====================================*/
 
-    grunt.registerTask('serve', 'start the server and preview your app', function (target) {
-
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'browserSync:dist']);
-        }
-
-        grunt.task.run([
-            'clean:server',
-            'modernizr',
-            'wiredep',
-            'concurrent:server',
-            'browserSync:livereload',
-            'watch'
-        ]);
-    });
+    // Start the server and preview your app
+    grunt.registerTask('serve',  [
+        'clean:server',
+        'concurrent:server',
+        'browserSync:livereload',
+        'notify:server',
+        'watch',
+    ]);
 
     grunt.registerTask('build', [
         'clean:dist',
-        'modernizr',
-        'wiredep',
-        'useminPrepare',
         'concurrent:dist',
+        'postcss',
         'concat',
+        'modernizr',
+        'copy',
+        'uncss',
         'cssmin',
         'uglify',
-        'copy:dist',
-        'filerev',
-        'usemin',
-        'htmlmin'
+        'processhtml',
+        'htmlmin',
+        'notify:release',
+    ]);
+
+    grunt.registerTask('dist', [
+        'build',
+        'browserSync:dist',
     ]);
 
     grunt.registerTask('default', [

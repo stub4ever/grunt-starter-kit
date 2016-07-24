@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    #Animations
+*------------------------------------*/
+
+// Animation keyframes
+
+@include keyframes(fadeIn) {
+  from {
+    @include transform(translateY(-20px));
+    opacity: 0;
+  }
+  to {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+}
+
+// Animation mixin
+
+@mixin animation--fadedown($delay) {
+  // Apply the fadeIn keyframes. Each animation
+  // will take 0.3s and have an ease-in-out
+  @include animation(fadeIn 0.3s ease-in-out);
+  // This animation should only play once
+  @include animation-iteration-count(1);
+  // Make sure the element maintains it's
+  // final visual state (i.e. 100% opacity)
+  @include animation-fill-mode(forwards);
+  // Delay - don't start the animation until we say so
+  @include animation-delay(#{$delay}s);
+}
+
+

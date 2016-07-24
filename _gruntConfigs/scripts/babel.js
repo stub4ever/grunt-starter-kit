@@ -1,5 +1,13 @@
-module.exports.tasks = {
+/*----------------------------------( BABEL )----------------------------------*/
 
+/**
+* Run Modern JavaScript compiler
+*
+* @see https://github.com/babel/grunt-babel
+*
+*/
+
+module.exports.tasks = {
 
    // Compiles ES6 with Babel
     babel: {
