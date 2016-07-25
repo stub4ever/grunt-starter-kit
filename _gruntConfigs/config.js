@@ -36,17 +36,17 @@ module.exports = {
 
     css : {
         /*-- SOURCES FOLDERS ---------------------------------------------*/
-        scssDir  : '<%=config.srcDir%>/styles',     // <%=config.css.scssDir%>
+        srcDirSass  : '<%=config.srcDir%>/styles',     // <%=config.css.srcDirSass%>
+        srcDirFonts  : '<%=config.css.srcDirSass%>/fonts',     // <%=config.css.srcDirFonts%>
 
         srcDevList : [                                      // <%=config.css.srcDevList%>
             '<%=config.css.tempDir%>/{,*/}*.css',
-            '<%=config.css.scssDir%>/{,*/}*.css',
+            '<%=config.css.srcDirSass%>/{,*/}*.css',
         ],
         srcVendorList : [                                  // <%=config.css.srcVendorList%>
             './bower_components/normalize-css/normalize.css',
         ],
 
-        srcDirFonts  : 'styles/fonts',     // <%=config.css.srcDirFonts%>
 
         /*-- DIST FOLDERS ---------------------------------------------*/
         distDir  : '<%=config.distDir%>/styles',    // <%=config.css.distDir%>
@@ -54,14 +54,12 @@ module.exports = {
         distDevFile : '<%=config.css.distDir%>/main.min.css',    // <%=config.css.distDevFile%>
         distVendorFile : '<%=config.css.distDir%>/vendor.min.css',    // <%=config.css.distVendorFile%>
 
-        distDirFonts  : 'styles/fonts',    // <%=config.css.distDirFonts%>
-
         /*-- TEMP FOLDERS ---------------------------------------------*/
         tempDir  : '<%=config.tempDir%>/styles',          // <%=config.css.tempDir%>
-        tempDirConcat : '<%=config.css.tempDir%>/concat/', // <%=config.css.tempDirConcat%>
+        tempDirConcat : '<%=config.css.tempDir%>/concat', // <%=config.css.tempDirConcat%>
 
-        tempDevConcatFile : '<%=config.css.tempDirConcat%>/main.css',         // <%=config.css.tempDevConcatFile%>
-        tempVendorConcatFile : '<%=config.css.tempDirConcat%>/vendor.css',    // <%=config.css.tempVendorConcatFile%>
+        tempDevConcatFile : 'main.css',         // <%=config.css.tempDevConcatFile%>
+        tempVendorConcatFile : 'vendor.css',    // <%=config.css.tempVendorConcatFile%>
     },
 
 
@@ -103,7 +101,7 @@ module.exports = {
 
         /*-- TEMP FOLDERS ---------------------------------------------*/
         tempDir : '<%=config.tempDir%>/scripts',     // <%=config.js.tempDir%>
-        tempDirConcat : '<%=config.js.tempDir%>/concat/', // <%=config.js.tempDirConcat%>
+        tempDirConcat : '<%=config.js.tempDir%>/concat', // <%=config.js.tempDirConcat%>
 
         tempDevConcatFile : '<%=config.js.tempDirConcat%>/main.js',         // <%=config.js.tempDevConcatFile%>
         tempVendorConcatFile : '<%=config.js.tempDirConcat%>/vendor.js',    // <%=config.js.tempVendorConcatFile%>

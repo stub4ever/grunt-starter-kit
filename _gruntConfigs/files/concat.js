@@ -12,12 +12,12 @@ module.exports.tasks = {
     concat: {
         css_dev: {
             files: {
-                '<%=config.css.tempDevConcatFile%>': '<%=config.css.srcDevList%>'
+                '<%=config.css.tempDirConcat%>/<%=config.css.tempDevConcatFile%>': '<%=config.css.srcDevList%>'
             }
         },
         css_vendor: {
             files: {
-                '<%=config.css.tempVendorConcatFile%>': '<%=config.css.srcVendorList%>'
+                '<%=config.css.tempDirConcat%>/<%=config.css.tempVendorConcatFile%>': '<%=config.css.srcVendorList%>'
             }
         },
         js_dev: {

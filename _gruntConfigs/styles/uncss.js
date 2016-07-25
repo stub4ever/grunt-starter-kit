@@ -17,17 +17,17 @@ module.exports.tasks = {
                 ignoreSheets: [/fonts.googleapis/],
                 urls: [], //Overwritten in load_sitemap_and_uncss task
                 ignore: ['/js-.+/'],
-                stylesheets: ["main.css"],
-                csspath: "/styles/",
-                htmlroot: '<%=config.distDir%>',
+                stylesheets: ["<%=config.css.tempDevConcatFile%>"],
+                csspath: "/styles/concat/",
+                htmlroot: '<%=config.tempDir%>',
             },
             files: [
                 {
                 src: [
-                    '<%=config.distDir%>/index.html',
-                    '<%=config.distDir%>/{,*/}*.html',
+                    '<%=config.tempDir%>/index.html',
+                    '<%=config.tempDir%>/{,*/}*.html',
                     ],
-                dest: '<%=config.css.distDevFile%>'
+                dest: '<%=config.css.tempDirConcat%>/<%=config.css.tempDevConcatFile%>'
                 }
             ]
         },
@@ -36,21 +36,21 @@ module.exports.tasks = {
                 ignoreSheets: [/fonts.googleapis/],
                 urls: [], //Overwritten in load_sitemap_and_uncss task
                 ignore: ['/js-.+/'],
-                ignore: [''],
-                stylesheets: ["vendor.css"],
-                csspath: "/styles/",
-                htmlroot: '<%=config.distDir%>',
+                stylesheets: ["<%=config.css.tempVendorConcatFile%>"],
+                csspath: "/styles/concat/",
+                htmlroot: '<%=config.tempDir%>',
             },
             files: [
                 {
                 src: [
-                    '<%=config.distDir%>/index.html',
-                    '<%=config.distDir%>/{,*/}*.html',
+                    '<%=config.tempDir%>/index.html',
+                    '<%=config.tempDir%>/{,*/}*.html',
                     ],
-                dest: '<%=config.css.distVendorFile%>'
+                dest: '<%=config.css.tempDirConcat%>/<%=config.css.tempVendorConcatFile%>'
                 }
             ]
         },
+
         // Optionally, add more generated files here ...
     }
 

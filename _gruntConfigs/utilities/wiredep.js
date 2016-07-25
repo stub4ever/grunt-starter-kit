@@ -9,7 +9,7 @@ module.exports.tasks = {
         ignorePath: /^(\.\.\/)*\.\./
       },
       sass: {
-        src: ['<%=config.css.scssDir%>/{,*/}*.{scss,sass}'],
+        src: ['<%=config.css.srcDirSass%>/{,*/}*.{scss,sass}'],
         ignorePath: /^(\.\.\/)+/
       }
     },

@@ -21,6 +21,15 @@ module.exports.tasks = {
                     filter: 'isFile',
                     flatten: false
                 },
+                {   // Copy Html to Dist
+                    expand: true,
+                    dot: true,
+                    cwd: '<%=config.srcDir%>',
+                    src: ['{,*/}*.html'],
+                    dest: '<%=config.tempDir%>',
+                    filter: 'isFile',
+                    flatten: false
+                },
             ],
         },
         css: {

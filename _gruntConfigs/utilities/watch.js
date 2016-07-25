@@ -23,7 +23,7 @@ module.exports.tasks = {
             tasks: ['concat', 'notify:config'],
         },
         sass: {
-            files: ['<%=config.css.scssDir%>/{,*/}*.{scss,sass}'],
+            files: ['<%=config.css.srcDirSass%>/{,*/}*.{scss,sass}'],
             tasks: ['sass', 'notify:styles']
         },
         babel: {
@@ -31,7 +31,7 @@ module.exports.tasks = {
             tasks: ['babel:dist', 'notify:scripts']
         },
         styles: {
-            files: ['<%=config.css.scssDir%>/{,*/}*.css'],
+            files: ['<%=config.css.srcDirSass%>/{,*/}*.css'],
             tasks: ['newer:copy:styles', 'sass', 'notify:styles']
         }
     },

@@ -23,7 +23,7 @@ module.exports.tasks = {
         dist: {
             files: [{
                 expand: true,
-                cwd: '<%=config.css.scssDir%>',
+                cwd: '<%=config.css.srcDirSass%>',
                 src: ['*.{scss,sass}'],
                 dest: '<%=config.css.tempDir%>',
                 ext: '.css'

@@ -12,9 +12,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 /*------------------------------------*\
     #Modules
     *------------------------------------*/
-    @import "modules/functions";
-    @import "modules/tools";
-    @import "modules/animations";
+
 /*------------------------------------*\
     #Base
     *------------------------------------*/
@@ -30,10 +28,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 /*------------------------------------*\
     #Helpers
     *------------------------------------*/
-    @import "helpers/image";
-    @import "helpers/content";
-    @import "helpers/spacing";
-    @import "helpers/element";
+
 /*------------------------------------*\
     #Vendor
     *------------------------------------*/
@@ -45,7 +40,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 /*------------------------------------*\
     #States
     *------------------------------------*/
-    @import "states/visibility";
+
 /*------------------------------------*\
     #Layouts
     *------------------------------------*/
