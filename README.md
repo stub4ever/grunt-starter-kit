@@ -16,7 +16,6 @@ SETUP
 # play with assemble
 http://www.andismith.com/blog/2014/02/getting-started-with-assemble/
 
-- task grunt-prettify
-for html
+
 
 
