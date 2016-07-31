@@ -16,7 +16,18 @@ module.exports.tasks = {
             options: {
                 ignoreSheets: [/fonts.googleapis/],
                 urls: [], //Overwritten in load_sitemap_and_uncss task
-                ignore: ['/js-.+/'],
+                ignore: [
+
+                    // don't remove these css classes
+                    /js\-[a-z\-0-9]+/,
+                    /item\-[a-z\-0-9]+/,
+                    /nav\-[a-z\-0-9]+/,
+                    /collapse\-[a-z\-0-9]+/,
+                    /active/,
+
+                    // for mobile menu
+                    /in/
+                ],
                 stylesheets: ["<%=config.css.tempDevConcatFile%>"],
                 csspath: "/styles/concat/",
                 htmlroot: '<%=config.tempDir%>',

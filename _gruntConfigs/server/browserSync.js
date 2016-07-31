@@ -23,7 +23,7 @@ module.exports.tasks = {
         livereload: {
             options: {
                 files: [
-                    '<%=config.srcDir%>/{,*/}*.html',
+                    '<%=config.tempDir%>/{,*/}*.html',
                     '<%=config.css.tempDir%>/{,*/}*.css',
                     '<%=config.img.srcDir%>/{,*/}*',
                     '<%=config.js.tempDir%>/{,*/}*.js'

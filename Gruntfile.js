@@ -13,16 +13,15 @@ module.exports = function (grunt) {
         pkg: require('./package'), // <%=pkg.name%>
 
         // Global Grunt vars. Edit files
-        config : require('./_gruntConfigs/config.js')
+        config : require('./_gruntConfigs/config.js'),
     };
-
 
     // Load grunt configurations automatically
     var configs = require('load-grunt-configs')(grunt, options);
 
      // Automatically load required grunt tasks
     require('jit-grunt')(grunt, {
-        useminPrepare: 'grunt-usemin'
+        cmq: 'grunt-combine-media-queries',
     });
 
     // Define the configuration for all the tasks
@@ -42,9 +41,13 @@ module.exports = function (grunt) {
         'watch',
     ]);
 
-    grunt.registerTask('js:test', [
+    grunt.registerTask('js:scan', [
         'babel',
         'jshint',
+    ]);
+
+    grunt.registerTask('css:scan', [
+
     ]);
 
     grunt.registerTask('build', [
@@ -53,7 +56,7 @@ module.exports = function (grunt) {
         'postcss',
         'concat',
         'copy:html',
-        'uncss',
+        // 'uncss',   // create uncss own task
         'modernizr',
         'copy',
         'cssmin',
@@ -62,6 +65,11 @@ module.exports = function (grunt) {
         'htmlmin',
         'notify:release',
     ]);
+
+    grunt.registerTask('css:optimize', [
+
+    ]);
+
 
     grunt.registerTask('dist', [
         'build',

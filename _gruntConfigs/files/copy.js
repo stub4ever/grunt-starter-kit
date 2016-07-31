@@ -15,18 +15,9 @@ module.exports.tasks = {
                 {   // Copy Html to Dist
                     expand: true,
                     dot: true,
-                    cwd: '<%=config.srcDir%>',
+                    cwd: '<%=config.tempDir%>',
                     src: ['{,*/}*.html'],
                     dest: '<%=config.distDir%>',
-                    filter: 'isFile',
-                    flatten: false
-                },
-                {   // Copy Html to Dist
-                    expand: true,
-                    dot: true,
-                    cwd: '<%=config.srcDir%>',
-                    src: ['{,*/}*.html'],
-                    dest: '<%=config.tempDir%>',
                     filter: 'isFile',
                     flatten: false
                 },
@@ -92,9 +83,22 @@ module.exports.tasks = {
                 {   // Copy new image format for the web to Dist
                     expand: true,
                     dot: true,
-                    cwd: '<%=config.srcDir%>',
-                    src: ['images/{,*/}*.webp'],
-                    dest: '<%=config.distDir%>',
+                    cwd: '<%=config.img.srcDir%>',
+                    src: ['{,*/}*.webp'],
+                    dest: '<%=config.img.distDir%>',
+                    filter: 'isFile',
+                    flatten: false
+                },
+            ],
+        },
+        icons: {
+            files: [
+                {   // Copy Icons to Dist
+                    expand: true,
+                    dot: true,
+                    cwd: '<%=config.ico.srcDir%>',
+                    src: ['{,*/}*.{ico,png}'],
+                    dest: '<%=config.ico.distDir%>',
                     filter: 'isFile',
                     flatten: false
                 },
@@ -106,7 +110,7 @@ module.exports.tasks = {
                     expand: true,
                     dot: true,
                     cwd: '<%=config.srcDir%>',
-                    src: ['*.{ico,png,txt}'],
+                    src: ['{,*/}*.txt'],
                     dest: '<%=config.distDir%>',
                     filter: 'isFile',
                     flatten: false

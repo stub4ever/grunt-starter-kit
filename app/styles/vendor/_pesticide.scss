@@ -1,13 +1,7 @@
 // pesticide v0.1.0 . @mrmrs . MIT
 
-// Toggle layout debugging with CSS Pesticide.
-//
-// $pesticide-debug-outline - {boolean} adds outlines to all elements.
-// $pesticide-debug-depth - {boolean} adds shadows to all elements.
-// @source - http://pesticide.io/
-
-$pesticide-debug-outline: false !default;
-$pesticide-debug-depth: false !default;
+$pesticide-debug-outline: true !default;
+$pesticide-debug-depth: true !default;
 
 @if $pesticide-debug-outline == true {
   body { outline: 1px solid #2980b9 !important; }

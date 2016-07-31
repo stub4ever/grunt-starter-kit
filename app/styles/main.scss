@@ -1,38 +1,64 @@
-// use this file only for import the sass content, keep it clean.
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-@import "bourbon";
-@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@charset 'utf-8';
 
+// The toolkit uses recommendations from Scalable and Modular Architecture for CSS (SMACSS)
+// @link http://smacss.com/book
+
+// CSS Debugging
+//
+// Toggle layout debugging with CSS Pesticide.
+//
+// $pesticide-debug-outline - {boolean} adds outlines to all elements.
+// $pesticide-debug-depth - {boolean} adds shadows to all elements.
+// @source - http://pesticide.io/
+
+$pesticide-debug-outline: false;
+$pesticide-debug-depth: false;
 
 /*------------------------------------*\
-    #Generic
+    #Vendor
     *------------------------------------*/
-    @import "generic/debug";
-    @import "generic/pesticide";
-/*------------------------------------*\
-    #Modules
-    *------------------------------------*/
+    @import "vendor/pesticide";
+    @import "vendor/normalize";
+    @import "vendor/include-media";
+    @import "bourbon";
+
+    // use this file only for import the sass content, keep it clean.
+    $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+    @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 /*------------------------------------*\
-    #Base
+    #Utilities
     *------------------------------------*/
-    @import "base/variables";
-    @import "base/grid-settings";
-    @import "base/buttons";
-    @import "base/forms";
-    @import "base/lists";
-    @import "base/tables";
-    @import "base/typography";
+    //-> Global Settings
+    @import "utilities/config";
+    @import "utilities/colors";
+    @import "utilities/typography";
+    @import "utilities/spacing";
+    @import "utilities/elements";
+    //-> Functionss
+    @import "utilities/functions";
+    //-> Mixins
+    @import "utilities/mixins";
 
-    @import "global";
 /*------------------------------------*\
     #Helpers
     *------------------------------------*/
 
 /*------------------------------------*\
-    #Vendor
+    #Base
     *------------------------------------*/
-    @import "vendor/include-media";
+    //-> Base global
+    @import "base/global";
+
+/*------------------------------------*\
+    #Helpers
+    *------------------------------------*/
+
+/*------------------------------------*\
+    #Layouts
+    *------------------------------------*/
+    @import "layouts/header";
+
 /*------------------------------------*\
     #Componenents
     *------------------------------------*/
@@ -42,13 +68,10 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
     *------------------------------------*/
 
 /*------------------------------------*\
-    #Layouts
-    *------------------------------------*/
-    @import "layouts/header";
-/*------------------------------------*\
     #Pages
     *------------------------------------*/
     @import "pages/home";
+
 /*------------------------------------*\
     #Shame
     *------------------------------------*/

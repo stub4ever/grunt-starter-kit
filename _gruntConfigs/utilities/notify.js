@@ -13,6 +13,12 @@ module.exports.tasks = {
     // https://github.com/studiodumbar/altair/blob/master/grunt/config/notify.js
 
     notify: {
+        templates: {
+           options: {
+                title: "Task Complete (<%= pkg.author %>)", // optional; defaults to the name in package.json, or will use project directory's name
+                message: 'Assemble finished running', // required
+            },
+        },
         styles: {
            options: {
                 title: "Task Complete (<%= pkg.author %>)", // optional; defaults to the name in package.json, or will use project directory's name

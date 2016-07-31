@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Starter kit - Sass + Bourbon library</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- CSS Vendors -->
+    <!-- build:css styles/vendor.min.css -->
+    <link rel="stylesheet" type="text/css" href="./styles/concat/vendor.css"/>
+    <!-- /build -->
+    <!-- Styles -->
+    <!-- build:css styles/main.min.css -->
+     <link rel="stylesheet" type="text/css" href="./styles/main.css"/>
+    <!-- /build -->
+
+    <!-- Modernizr -->
+    <!-- build:css scripts/lib/modernizr.min.js -->
+    <script src="./scripts/lib/modernizr.min.js"></script>
+    <!-- /build -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+{{> header }}
+<div class="container">
+    {{> body }}
+</div>
+{{> footer }}
+{{> body-script }}
+</body>
+</html>

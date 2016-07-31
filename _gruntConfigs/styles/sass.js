@@ -10,7 +10,6 @@
 
 module.exports.tasks = {
 
-
     sass: {
         options: {
             expand: true,
@@ -18,7 +17,10 @@ module.exports.tasks = {
             sourceMap: true,
             sourceMapEmbed: true,
             sourceMapContents: true,
-            includePaths: require('node-bourbon').includePaths
+            includePaths: [
+                require('node-bourbon').includePaths,
+                'bower_components'
+            ]
         },
         dist: {
             files: [{

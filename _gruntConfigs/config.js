@@ -9,13 +9,12 @@ module.exports = {
     //PROJECT settings
     src : "./_gruntConfigs/**/*.js",
 
-
     /*----------------------------------( port vars )----------------------------------*/
 
     port : {
-        host: 'localhost',
-        dev: 8000,
-        dist: 9000,
+        host: 'localhost',  // <%=config.port.host%>
+        dev: 8000,          // <%=config.port.dev%>
+        dist: 9000,         // <%=config.port.dist%>
     },
 
     /*----------------------------------( Dir vars )----------------------------------*/
@@ -32,21 +31,29 @@ module.exports = {
     },
 
 
+    /*----------------------------------( template var )----------------------------------*/
+
+     tpl : {
+        /*-- SOURCES FOLDERS ---------------------------------------------*/
+        srcDir : '<%=config.srcDir%>/templates',  // <%=config.tpl.srcDir%>
+    },
+
+
     /*----------------------------------( css vars )----------------------------------*/
 
     css : {
         /*-- SOURCES FOLDERS ---------------------------------------------*/
-        srcDirSass  : '<%=config.srcDir%>/styles',     // <%=config.css.srcDirSass%>
+        srcDirSass  : '<%=config.srcDir%>/styles',              // <%=config.css.srcDirSass%>
         srcDirFonts  : '<%=config.css.srcDirSass%>/fonts',     // <%=config.css.srcDirFonts%>
 
-        srcDevList : [                                      // <%=config.css.srcDevList%>
+        srcDevList : [  // <%=config.css.srcDevList%>
             '<%=config.css.tempDir%>/{,*/}*.css',
             '<%=config.css.srcDirSass%>/{,*/}*.css',
+            // INSERT custom CSS files  ------------------/
         ],
-        srcVendorList : [                                  // <%=config.css.srcVendorList%>
-            './bower_components/normalize-css/normalize.css',
+        srcVendorList : [ // <%=config.css.srcVendorList%>
+            // INSERT third party CSS files  ------------------/
         ],
-
 
         /*-- DIST FOLDERS ---------------------------------------------*/
         distDir  : '<%=config.distDir%>/styles',    // <%=config.css.distDir%>
@@ -73,23 +80,26 @@ module.exports = {
         srcDevList : [                                     // <%=config.js.srcDevList%>
             '<%=config.js.tempDir%>/*.js',
             '<%=config.js.tempDir%>/app/*.js'
+            // INSERT custom JS files  ------------------/
         ],
         srcVendorList : [                                  // <%=config.js.srcVendorList%>
-            './bower_components/jquery/dist/jquery.js',
+            '<%=config.bower.srcDir%>/jquery/dist/jquery.js',
+            // INSERT third party JS files  ------------------/
         ],
         srcPluginsList : [                                 // <%=config.js.srcPluginsList%>
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
-            './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/popover.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+            '<%=config.bower.srcDir%>/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+            // INSERT plugin JS files  ------------------/
         ],
 
         /*-- DIST FOLDERS ---------------------------------------------*/
@@ -115,7 +125,13 @@ module.exports = {
         srcDir : '<%=config.srcDir%>/images',           // <%=config.img.srcDir%>
         distDir : '<%=config.distDir%>/images',         // <%=config.img.distDir%>
 
-        grunticonDir : '<%=config.srcDir%>/grunticon'   // <%=config.img.grunticonDir%>
+    },
+
+     /*----------------------------------( ico var )----------------------------------*/
+
+    ico : {
+        srcDir : '<%=config.srcDir%>/icons',           // <%=config.ico.srcDir%>
+        distDir : '<%=config.distDir%>/icons',           // <%=config.ico.distDir%>
     },
 
 

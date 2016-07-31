@@ -17,10 +17,12 @@ module.exports.tasks = {
         'babel:dist',
         'concat',
         'modernizr',
+        'assemble'
       ],
       dist: [
         'babel',
         'sass',
+        'assemble',
         'imagemin',
         'svgmin',
       ]

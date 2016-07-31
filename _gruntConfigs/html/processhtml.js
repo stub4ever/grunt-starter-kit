@@ -23,20 +23,12 @@ module.exports.tasks = {
             files: [
                 {
                     expand: true,
-                    cwd: '<%=config.srcDir%>',
+                    cwd: '<%=config.tempDir%>',
                     src: ['**/*.html', ],
                     dest: '<%=config.distDir%>',
                     ext: '.html',
                     flatten: false,
                 },
-                // {
-                //     expand: true,
-                //     cwd: '<%= project.src_templates %>/',
-                //     src: [ '*.html'],
-                //     dest: '<%= project.dist_templates %>/',
-                //     ext: '.html',
-                //     flatten: false,
-                // },
             ],
         }
     },

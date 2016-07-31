@@ -18,6 +18,10 @@ module.exports.tasks = {
         html: {
             files: ['<%=config.srcDir%>/{,*/}*.html'],
         },
+        templates: {
+            files: ['<%=config.tpl.srcDir%>/{,*/}*.hbs', '<%=config.tpl.srcDir%>/{,*/}*.json'],
+            tasks: [ 'assemble', 'notify:templates'],
+        },
         gruntfile: {
             files: ['_gruntConfigs/{,*/}*.js'],
             tasks: ['concat', 'notify:config'],
