@@ -7,17 +7,17 @@
 * @see http://www.jshint.com/docs/
 */
 
-
 module.exports.tasks = {
 
-
-    sasslint: {
-        options: {
-            configFile: '.sass-lint.yml',
-            outputFile: 'report.xml'
-
+    jshint: {
+        base: {
+            src: [
+                '<%=config.js.tempDevConcatFile%>'
+            ]
         },
-        target: ['<%=config.css.srcDirSass%>/*.scss']
-    }
+        options: {
+            jshintrc: true,
+        }
+    },
 
 };

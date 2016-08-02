@@ -12,20 +12,23 @@
 module.exports.tasks = {
 
     concurrent: {
-      server: [
-        'sass',
-        'babel:dist',
-        'concat',
-        'modernizr',
-        'assemble'
-      ],
-      dist: [
-        'babel',
-        'sass',
-        'assemble',
-        'imagemin',
-        'svgmin',
-      ]
+        server: [
+            'sass',
+            'babel:dist',
+            'concat',
+            'modernizr',
+            'assemble'
+        ],
+        temp: [
+            'babel',
+            'sass',
+            'assemble',
+        ],
+        dist: [
+            'imagemin',
+            'svgmin',
+            'copy',
+        ]
     },
 
 };

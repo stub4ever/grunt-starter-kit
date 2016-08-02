@@ -2,8 +2,10 @@
  * Grunt tasks:
  * - grunt                   : The default task. Alias for `grunt serve` task below
  * - grunt serve             : watch files and run a static server
- * - grunt build             : Concat & optimized css, js, svg, images files for production
+ * - grunt css:check         : check css style for violations
+ * - grunt js:check          : check js style for violations
  * - grunt dist              : Run a optimized static production server
+ * - grunt production        : Run concat & optimized css, js, svg, images files for production
  */
 
 module.exports = function (grunt) {
@@ -21,7 +23,7 @@ module.exports = function (grunt) {
 
      // Automatically load required grunt tasks
     require('jit-grunt')(grunt, {
-        cmq: 'grunt-combine-media-queries',
+        cmq: 'grunt-combine-media-queries'
     });
 
     // Define the configuration for all the tasks
@@ -41,24 +43,34 @@ module.exports = function (grunt) {
         'watch',
     ]);
 
-    grunt.registerTask('js:scan', [
+    grunt.registerTask('css:check', [
+        'sass',
+        'concat:css_dev',
+        'postcss',
+        'csslint'
+    ]);
+
+    grunt.registerTask('js:check', [
         'babel',
+        'concat:js_dev',
+        'jscs',
         'jshint',
     ]);
 
-    grunt.registerTask('css:scan', [
-
+    grunt.registerTask('dist', [
+        'production',
+        'browserSync:dist',
     ]);
 
-    grunt.registerTask('build', [
+    grunt.registerTask('production', [
         'clean:dist',
-        'concurrent:dist',
+        'concurrent:temp',
         'postcss',
         'concat',
-        'copy:html',
-        // 'uncss',   // create uncss own task
+        'cmq',
+        'uncss',
         'modernizr',
-        'copy',
+        'concurrent:dist',
         'cssmin',
         'uglify',
         'processhtml',
@@ -66,15 +78,6 @@ module.exports = function (grunt) {
         'notify:release',
     ]);
 
-    grunt.registerTask('css:optimize', [
-
-    ]);
-
-
-    grunt.registerTask('dist', [
-        'build',
-        'browserSync:dist',
-    ]);
 
     grunt.registerTask('default', [
         'serve'

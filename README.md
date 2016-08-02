@@ -4,10 +4,7 @@ Starter kit - Sass + Bourbon library
 # NEXT STEP
 
 TASK
-- Finish task jscs --> js:scan
-- add css:scan
-- create OPTIMIZE task for css --> uncss + cmq 
-- filerev task????
+- filerev task
 - Sprite task
 
 SETUP 
