@@ -52,7 +52,7 @@ module.exports.tasks = {
         release: {
             options: {
                 title: "Task Complete (<%= pkg.author %>)", // optional; defaults to the name in package.json, or will use project directory's name
-                message: 'Finished production!', // required
+                message: 'Production is ready!', // required
             },
         },
     }
