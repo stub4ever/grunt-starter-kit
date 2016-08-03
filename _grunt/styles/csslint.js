@@ -12,7 +12,7 @@ module.exports.tasks = {
     csslint: {
         base: {
             src: [
-                '<%=config.css.tempDir%>/concat/<%=config.css.tempDevConcatFile%>'
+                '<%=config.css.tempDirConcat%>/<%=config.css.tempDevConcatFile%>'
             ]
         },
         options: {

@@ -11,7 +11,9 @@ module.exports.tasks = {
                 ]
             }]
         },
-        server: '<%=config.tempDir%>'
+        server: '<%=config.tempDir%>',
+        css_server: '<%=config.css.tempDir%>',
+        js_server: '<%=config.js.tempDir%>',
     },
 };
 

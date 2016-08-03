@@ -45,13 +45,19 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('css:check', [
+        'clean:css_server',
         'sass',
         'concat:css_dev',
+        'concat:css_vendor',
         'postcss',
+        'assemble',
+        'cmq',
+        'uncss',
         'csslint'
     ]);
 
     grunt.registerTask('js:check', [
+        'clean:js_server',
         'babel',
         'concat:js_dev',
         'jscs',
