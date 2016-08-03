@@ -1,8 +1,16 @@
+ /*----------------------------------( USEMIN )----------------------------------*/
+
+/**
+* // 3) Performs rewrites based on rev and the useminPrepare configuration
+* // Update asset references in HTML DIST
+*
+* @see https://github.com/yeoman/grunt-usemin
+*
+*/
+
+
 module.exports.tasks = {
 
-
-    // 3) Performs rewrites based on rev and the useminPrepare configuration
-    // Update asset references in HTML DIST
     usemin: {
         options: {
             assetsDirs: [

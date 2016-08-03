@@ -7,7 +7,7 @@
 module.exports = {
 
     //PROJECT settings
-    src : "./_gruntConfigs/**/*.js",
+    src : "./_grunt/**/*.js",
 
     /*----------------------------------( port vars )----------------------------------*/
 
@@ -57,6 +57,7 @@ module.exports = {
 
         /*-- DIST FOLDERS ---------------------------------------------*/
         distDir  : '<%=config.distDir%>/styles',    // <%=config.css.distDir%>
+        distDirFonts : '<%=config.css.distDir%>/fonts',// <%=config.css.distDirFonts%>
 
         distDevFile : '<%=config.css.distDir%>/main.min.css',    // <%=config.css.distDevFile%>
         distVendorFile : '<%=config.css.distDir%>/vendor.min.css',    // <%=config.css.distVendorFile%>

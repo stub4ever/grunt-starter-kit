@@ -19,9 +19,9 @@ module.exports.tasks = {
          src: [
             '<%=config.js.distDir%>/{,*/}*.js',
             '<%=config.css.distDir%>/{,*/}*.css',
+            '<%=config.css.distDirFonts%>/{,*/}*.*',
             '<%=config.img.distDir%>/{,*/}*.*',
-            '<%=config.distDir%>/<%=config.css.distDirFonts%>/{,*/}*.*',
-            '<%=config.distDir%>/*.{ico,png}'
+            '<%=config.ico.distDir%>/*.{ico,png}'
          ]
       }
    },

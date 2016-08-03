@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         pkg: require('./package'), // <%=pkg.name%>
 
         // Global Grunt vars. Edit files
-        config : require('./_gruntConfigs/config.js'),
+        config : require('./_grunt/config.js'),
     };
 
     // Load grunt configurations automatically
@@ -23,7 +23,8 @@ module.exports = function (grunt) {
 
      // Automatically load required grunt tasks
     require('jit-grunt')(grunt, {
-        cmq: 'grunt-combine-media-queries'
+        useminPrepare: 'grunt-usemin',
+        cmq: 'grunt-combine-media-queries',
     });
 
     // Define the configuration for all the tasks
@@ -65,6 +66,7 @@ module.exports = function (grunt) {
     grunt.registerTask('production', [
         'clean:dist',
         'concurrent:temp',
+        'useminPrepare',
         'postcss',
         'concat',
         'cmq',
@@ -73,11 +75,12 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'cssmin',
         'uglify',
+        'filerev',
         'processhtml',
+        'usemin',
         'htmlmin',
         'notify:release',
     ]);
-
 
     grunt.registerTask('default', [
         'serve'
