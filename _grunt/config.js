@@ -30,7 +30,6 @@ module.exports = {
         srcDir : 'bower_components'     // <%=config.bower.srcDir%>
     },
 
-
     /*----------------------------------( template var )----------------------------------*/
 
      tpl : {
@@ -45,8 +44,9 @@ module.exports = {
         /*-- SOURCES FOLDERS ---------------------------------------------*/
         srcDirSass  : '<%=config.srcDir%>/styles',              // <%=config.css.srcDirSass%>
         srcDirFonts  : '<%=config.css.srcDirSass%>/fonts',     // <%=config.css.srcDirFonts%>
+        srcDirGrunticon  : '<%=config.css.srcDirSass%>/_grunticon',   // <%=config.css.srcDirGrunticon%>
 
-        srcDevList : [  // <%=config.css.srcDevList%>
+        srcDevList : [        // <%=config.css.srcDevList%>
             '<%=config.css.tempDir%>/{,*/}*.css',
             '<%=config.css.srcDirSass%>/{,*/}*.css',
             // INSERT custom CSS files  ------------------/
@@ -125,14 +125,16 @@ module.exports = {
     img : {
         srcDir : '<%=config.srcDir%>/images',           // <%=config.img.srcDir%>
         distDir : '<%=config.distDir%>/images',         // <%=config.img.distDir%>
-
     },
 
      /*----------------------------------( ico var )----------------------------------*/
 
     ico : {
         srcDir : '<%=config.srcDir%>/icons',           // <%=config.ico.srcDir%>
-        distDir : '<%=config.distDir%>/icons',           // <%=config.ico.distDir%>
+        srcDirSvg : '<%=config.ico.srcDir%>/svg',      // <%=config.ico.srcDirSvg%>
+
+        distDir : '<%=config.distDir%>/icons',         // <%=config.ico.distDir%>
+        distDirSvg : '<%=config.ico.distDir%>/svg',    // <%=config.ico.distDirSvg%>
     },
 
 

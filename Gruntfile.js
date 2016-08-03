@@ -65,6 +65,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('production', [
         'clean:dist',
+        'concurrent:src',
         'concurrent:temp',
         'useminPrepare',
         'postcss',

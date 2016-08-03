@@ -25,6 +25,12 @@ module.exports.tasks = {
                 message: 'Sass finished running', // required
             },
         },
+        grunticon: {
+            options: {
+                title: "Task Complete (<%= pkg.author %>)", // optional; defaults to the name in package.json, or will use project directory's name
+                message: 'Grunticon finished running', // required
+            },
+        },
         scripts: {
             options: {
                 title: "Task Complete (<%= pkg.author %>)", // optional; defaults to the name in package.json, or will use project directory's name

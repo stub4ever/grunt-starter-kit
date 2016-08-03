@@ -21,7 +21,8 @@ module.exports.tasks = {
             '<%=config.css.distDir%>/{,*/}*.css',
             '<%=config.css.distDirFonts%>/{,*/}*.*',
             '<%=config.img.distDir%>/{,*/}*.*',
-            '<%=config.ico.distDir%>/*.{ico,png}'
+            '<%=config.ico.distDir%>/{,*/}*.{ico,png}',
+            '<%=config.ico.distDirSvg%>/{,*/}*.svg',
          ]
       }
    },

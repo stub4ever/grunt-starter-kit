@@ -34,6 +34,10 @@ module.exports.tasks = {
             files: ['<%=config.js.srcDir%>/**/**/**/*.js'],
             tasks: ['babel:dist', 'notify:scripts']
         },
+        grunticon: {
+            files: ['<%=config.ico.srcDirSvg%>/**/**/**/*.svg'],
+            tasks: ['grunticon', 'notify:grunticon']
+        },
         styles: {
             files: ['<%=config.css.srcDirSass%>/{,*/}*.css'],
             tasks: ['newer:copy:styles', 'sass', 'notify:styles']

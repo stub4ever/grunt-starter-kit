@@ -93,7 +93,7 @@ module.exports.tasks = {
         },
         icons: {
             files: [
-                {   // Copy Icons to Dist
+                {   // Copy Icon ico + png files to Dist
                     expand: true,
                     dot: true,
                     cwd: '<%=config.ico.srcDir%>',

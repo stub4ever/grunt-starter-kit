@@ -25,9 +25,9 @@ module.exports.tasks = {
         dist: {
             files: [{
                 expand: true,
-                cwd: '<%=config.img.srcDir%>',
+                cwd: '<%=config.ico.srcDirSvg%>',
                 src: '{,*/}*.svg',
-                dest: '<%=config.img.distDir%>',
+                dest: '<%=config.ico.distDirSvg%>',
                 ext: '.svg'
             }]
         }

@@ -13,11 +13,15 @@ module.exports.tasks = {
 
     concurrent: {
         server: [
+            'grunticon',
             'sass',
             'babel:dist',
             'concat',
             'modernizr',
-            'assemble'
+            'assemble',
+        ],
+        src: [
+            'grunticon',
         ],
         temp: [
             'babel',
