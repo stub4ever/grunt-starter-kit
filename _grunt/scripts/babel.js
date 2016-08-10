@@ -17,7 +17,7 @@ module.exports.tasks = {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%=config.js.srcDir%>',
+          cwd: '/<%=config.js.srcDir%>',
           src: '{,*/}*.js',
           dest: '<%=config.js.tempDir%>',
           ext: '.js'
